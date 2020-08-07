@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
 
@@ -13,17 +13,17 @@ test("form header renders", () => {
      render(<CheckoutForm />);
 
    
-    const firstName = screen.getByLableText(/first Name/i);
-    const lastName = screen.getByLableText(/last Name/i);
-    const address = screen.getByLableText(/address/i);
+    const firstNameIp = screen.getByLableText(/first Name/i)
+    const lastNameIp = screen.getByLableText(/last Name/i)
+    const addressIp = screen.getByLableText(/address/i)
   
   
-    fireEvent.change(firstName, { target: { value: 'Orlando' } })
-    fireEvent.change(lastName, { target: { value: 'Davila' } })
-    fireEvent.change(address, { target: { value: 'BigBear Lane' } })
+    fireEvent.change(firstNameIp, { target: { value: 'Orlando' } })
+    fireEvent.change(lastNameIp, { target: { value: 'Davila' } })
+    fireEvent.change(addressIp, { target: { value: 'BigBear Lane' } })
   
     const submitBtn = screen.getByRole('button')
-    fireEvent.click(button);
+    fireEvent.click(submitBtn);
   
     expect(await screen.findByText(/Orlando/i)).toBeInTheDocument();
   })
