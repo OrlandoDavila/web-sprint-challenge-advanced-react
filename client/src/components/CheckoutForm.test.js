@@ -13,9 +13,9 @@ test("form header renders", () => {
      render(<CheckoutForm />);
 
    
-    const firstNameIp = screen.getByLableText(/first Name/i)
-    const lastNameIp = screen.getByLableText(/last Name/i)
-    const addressIp = screen.getByLableText(/address/i)
+    const firstNameIp = screen.getByPlaceholderText(/first Name/i)
+    const lastNameIp = screen.getByPlaceholderText(/last Name/i)
+    const addressIp = screen.getByPlaceholderText(/address/i)
   
   
     fireEvent.change(firstNameIp, { target: { value: 'Orlando' } })

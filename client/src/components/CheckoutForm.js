@@ -35,6 +35,7 @@ const CheckoutForm = (props) => {
           <input
             id="firstName"
             name="firstName"
+            placeholder="first name"
             value={values.firstName}
             onChange={handleChanges}
           />
@@ -44,6 +45,7 @@ const CheckoutForm = (props) => {
           <input
             id="lastName"
             name="lastName"
+            placeholder="last name"
             value={values.lastName}
             onChange={handleChanges}
           />
@@ -53,6 +55,7 @@ const CheckoutForm = (props) => {
           <input
             id="address"
             name="address"
+            placeholder="address"
             value={values.address}
             onChange={handleChanges}
           />
