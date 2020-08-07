@@ -1,8 +1,8 @@
-import CheckoutForm from "../components/CheckoutForm"
+import { useState } from 'react';
 // write your custom hook here to control your checkout form
 
-export const useForm = (intValue) => {
-    const [values, setValues] = CheckoutForm(intValue);
+export const useForm = (initialValue) => {
+    const [values, setValues] = useState(initialValue);
 
     const handleChanges = e => {
         setValues({
@@ -10,10 +10,5 @@ export const useForm = (intValue) => {
         })
     }
 
-    const clearForm = e => {
-        e.preventDefault();
-        setValues(intValue);
-    }
-
-    retuen [values, handleChanges, clearForm]
+    return [values, handleChanges]
 }
